@@ -8,7 +8,100 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <CommandBar x:Name="cmdBar" Grid.ColumnSpan="2">
 
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Like" Label="Like" />
+                <AppBarButton Icon="Dislike" Label="Dislike" />
+            </CommandBar.SecondaryCommands>
+            <!--<CommandBar.Content>
+                <ComboBox x:Name="cmbxFontSize" PlaceholderText="Size" Width="80"/>
+
+            </CommandBar.Content>-->
+
+            <!--<AppBarButton x:Name="btnNewPage" Icon="Page" Label="New Page"/>
+            <AppBarSeparator/>-->
+            <AppBarButton x:Name="btnOpen" Icon="OpenFile" Label="Open File"  ToolTipService.ToolTip="Open file" Click="btnOpen_Click"/>
+            <AppBarButton x:Name="btnSave" Icon="Save" Label="Save File"   ToolTipService.ToolTip="Save file" Click="btnSave_Click"/>
+            <AppBarButton x:Name="btnPreview" Icon="Preview" Label="Preview" ToolTipService.ToolTip="Preview file (Coming Soon)"/>
+            <AppBarButton x:Name="btnPrint"  Icon="Pictures" Label="Print" ToolTipService.ToolTip="Print (Coming Soon)"/>
+            <AppBarSeparator/>
+            <AppBarButton x:Name="btnCopy" Icon="Copy" Label="Copy" Click="btnCopy_Click" ToolTipService.ToolTip="Copy"/>
+            <AppBarButton x:Name="btnCut" HorizontalAlignment="Left" Icon="Cut" Label="Cut" Click="btnCut_Click" ToolTipService.ToolTip="Cut"/>
+            <AppBarButton x:Name="btnPaste" HorizontalAlignment="Left" Icon="Paste" Label="Paste" Click="btnPaste_Click" ToolTipService.ToolTip="Paste"/>
+            <!--<AppBarSeparator/>
+            <AppBarToggleButton x:Name="btnFullscreen" Icon="FullScreen" Label="Fullscreen" ToolTipService.ToolTip="Open file" Checked="btnFullscreen_Checked" Unchecked="btnFullscreen_Unchecked"/>-->
+            <AppBarSeparator/>
+            <AppBarButton x:Name="btnUndo"  Icon="Undo" Label="Undo" ToolTipService.ToolTip="Undo" Click="btnUndo_Click" />
+            <AppBarButton x:Name="btnRedo" Icon="Redo" Label="Redo" ToolTipService.ToolTip="Redo" Click="btnRedo_Click" />
+            <AppBarSeparator/>
+            <AppBarButton x:Name="btnFontIncrease" Icon="FontIncrease" Label="Font Increase" ToolTipService.ToolTip="Font Increase" Click="btnFontIncrease_Click"/>
+            <AppBarButton x:Name="btnFontDecrease" Icon="FontDecrease" Label="Font Decrease"  ToolTipService.ToolTip="Font Decrease" Click="btnFontDecrease_Click"/>
+            <AppBarButton Icon="Font" Label="Font"  ToolTipService.ToolTip="Font Selection">
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuFontSelection"/>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="FontColor" Label="Font Color"  ToolTipService.ToolTip="Font Color">
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuFontColor"/>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="FontSize" Label="Font Size" ToolTipService.ToolTip="Font Size" >
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuFontSize"/>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton x:Name="btnChangeCase" Icon="Font" Label="Font Case" ToolTipService.ToolTip="Change Case" >
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuChangeCase">
+                        <MenuFlyoutItem x:Name="mnuItemChangeCaseLower" Text="lower" Click="mnuItemChangeCaseLower_Click"/>
+                        <MenuFlyoutItem x:Name="mnuItemChangeCaseUpper" Text="UPPER" Click="mnuItemChangeCaseUpper_Click"/>
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton x:Name="btnStyle" Icon="List" Label="Font Styles" ToolTipService.ToolTip="Font Styles" >
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuFontStyles"/>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarSeparator/>
+            <AppBarButton x:Name="btnClear"  Icon="Clear" Label="Clear" ToolTipService.ToolTip="Clear" Click="btnClear_Click"/>
+            <AppBarSeparator/>
+            <AppBarToggleButton x:Name="btnBold" Icon="Bold" Label="Bold"  ToolTipService.ToolTip="Bold" Checked="btnBold_Checked" Unchecked="btnBold_Unchecked"/>
+            <AppBarToggleButton x:Name="btnItalic"  Icon="Italic" Label="Italic"  ToolTipService.ToolTip="Italic" Checked="btnItalic_Checked" Unchecked="btnItalic_Unchecked"/>
+            <AppBarToggleButton x:Name="btnUnderline" Icon="Underline" Label="Underline"  ToolTipService.ToolTip="Underline" Checked="btnUnderline_Checked" Unchecked="btnUnderline_Unchecked"/>
+            <AppBarSeparator/>
+            <AppBarToggleButton x:Name="btnAlignLeft" Icon="AlignLeft" Label="Align Left" ToolTipService.ToolTip="Align Left" Checked="btnAlignLeft_Checked" Unchecked="btnAlignLeft_Unchecked"/>
+            <AppBarToggleButton x:Name="btnAlignCenter" Icon="AlignCenter" Label="Align Center" ToolTipService.ToolTip="Align Center" Checked="btnAlignCenter_Checked" Unchecked="btnAlignCenter_Unchecked"/>
+            <AppBarToggleButton x:Name="btnAlignRight" Icon="AlignRight" Label="Align Right"  ToolTipService.ToolTip="Align Right" Checked="btnAlignRight_Checked" Unchecked="btnAlignRight_Unchecked"/>
+            <AppBarSeparator/>
+            <AppBarButton x:Name="btnBullets" Icon="Bullets" Label="Add Bullets" ToolTipService.ToolTip="Add Buillets">
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="mnuBullets">
+                        <MenuFlyoutItem x:Name="mnuItmBullet" Text="Bullet" Click="mnuItmBullet_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItmCircleNumber" Text="Circle Number" Click="mnuItmCircleNumber_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItemUpperEngLetter" Text="Uppercase English Letter" Click="mnuItemUpperEngLetter_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItmLowerEngLetter" Text="Lowercase English Letter" Click="mnuItmLowerEngLetter_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItmUpperRomanNumeral" Text="Uppercase Roman Numeral" Click="mnuItmUpperRomanNumeral_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItmLowerRomanNumeral" Text="Lowercase Roman Numeral" Click="mnuItmLowerRomanNumeral_Click"></MenuFlyoutItem>
+                        <MenuFlyoutItem x:Name="mnuItmNone" Text="None" Click="mnuItmNone_Click"></MenuFlyoutItem>
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Zoom" Label="Zoom"  ToolTipService.ToolTip="Zoom"/>
+        </CommandBar>
+        <RelativePanel Margin="0,48,0,-13" HorizontalAlignment="Stretch">
+            <RelativePanel.Resources>
+                <Style TargetType="AppBarButton">
+                    <Setter Property="IsCompact" Value="True"/>
+                </Style>
+            </RelativePanel.Resources>
+            <RichEditBox x:Name="editor" x:FieldModifier="public"
+                 RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" Margin="0,0,0,33" DragEnter="editor_DragEnter" DragOver="editor_DragOver">
+            </RichEditBox>
+        </RelativePanel>
     </Grid>
 </Page>
