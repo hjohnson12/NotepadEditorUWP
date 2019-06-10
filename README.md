@@ -30,7 +30,7 @@ string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFa
 
 * **Hunter** - *Initial work* - [hjohnson012](https://github.com/hjohnson012)
 
-See also the list of [contributors](https://github.com/hjohnson12/KanbanBoardUWP/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/hjohnson12/NotepadEditorUWP/graphs/contributors) who participated in this project.
 
 ## License
 
